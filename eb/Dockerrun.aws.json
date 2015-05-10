@@ -1,32 +1,18 @@
 {
   "AWSEBDockerrunVersion": 2,
-  "volumes": [
-    {
-      "name": "php-app",
-      "host": {
-        "sourcePath": "/var/app/current/php-app"
-      }
-    },
-    {
-      "name": "nginx-proxy-conf",
-      "host": {
-        "sourcePath": "/var/app/current/proxy/conf.d"
-      }
-    }  
-  ],
+  "volumes": [],
   "containerDefinitions": [
     {
-      "name": "php-app",
-      "image": "php:fpm",
+      "name": "tech-blog",
+      "image": "quay.io/tsukaby/tech-blog",
       "essential": true,
-      "memory": 128,
-      "mountPoints": [
-        {
-          "sourceVolume": "php-app",
-          "containerPath": "/var/www/html",
-          "readOnly": true
-        }
-      ]
+      "memory": 256
+    },
+    {
+      "name": "anime-lineup",
+      "image": "tsukaby/anime-lineup-docker",
+      "essential": true,
+      "memory": 512
     },
     {
       "name": "nginx-proxy",
@@ -40,24 +26,10 @@
         }
       ],
       "links": [
-        "php-app"
+        "tech-blog",
+        "anime-lineup"
       ],
-      "mountPoints": [
-        {
-          "sourceVolume": "php-app",
-          "containerPath": "/var/www/html",
-          "readOnly": true
-        },
-        {
-          "sourceVolume": "nginx-proxy-conf",
-          "containerPath": "/etc/nginx/conf.d",
-          "readOnly": true
-        },
-        {
-          "sourceVolume": "awseb-logs-nginx-proxy",
-          "containerPath": "/var/log/nginx"
-        }
-      ]
+      "mountPoints": []
     }
   ]
 }
