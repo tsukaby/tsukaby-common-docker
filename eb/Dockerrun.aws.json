@@ -16,7 +16,7 @@
     },
     {
       "name": "nginx-proxy",
-      "image": "nginx",
+      "image": "quay.io/tsukaby/tsukaby-proxy",
       "essential": true,
       "memory": 128,
       "portMappings": [
