@@ -1,5 +1,10 @@
 FROM wordpress
 
+ENV WORDPRESS_DB_HOST mydbinstance.cfrtxetqlrkd.ap-northeast-1.rds.amazonaws.com:3306
+ENV WORDPRESS_DB_USER=root
+ENV WORDPRESS_DB_PASSWORD=password
+ENV WORDPRESS_DB_NAME=tech_blog
+
 # Install tools
 RUN apt-get update
 RUN apt-get -y install wget curl unzip python python-pip
@@ -25,9 +30,6 @@ WORKDIR /tmp/themes
 RUN wget https://s3-ap-northeast-1.amazonaws.com/tsukaby/stinger5ver20150505b.zip
 RUN unzip './*.zip' -d /usr/src/wordpress/wp-content/themes
 
-# !!!!!!TMP!!!!!!!!
-RUN mkdir ~/.aws
-RUN echo "[default]\nregion = ap-northeast-1\naws_access_key_id = AKIAJRGVDRR3YO7BEGUA\naws_secret_access_key = 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\noutput = json\n" > ~/.aws/config
 
 # Download image files
 WORKDIR /usr/src/wordpress/wp-content/

@@ -6,19 +6,13 @@
       "name": "tech-blog",
       "image": "quay.io/tsukaby/tech-blog",
       "essential": true,
-      "memory": 256
-    },
-    {
-      "name": "anime-lineup",
-      "image": "tsukaby/anime-lineup-docker",
-      "essential": true,
       "memory": 512
     },
     {
       "name": "nginx-proxy",
       "image": "quay.io/tsukaby/tsukaby-proxy",
       "essential": true,
-      "memory": 128,
+      "memory": 256,
       "portMappings": [
         {
           "hostPort": 80,
@@ -26,8 +20,7 @@
         }
       ],
       "links": [
-        "tech-blog",
-        "anime-lineup"
+        "tech-blog"
       ],
       "mountPoints": []
     }
