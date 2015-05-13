@@ -27,22 +27,19 @@ RUN unzip './*.zip' -d /usr/src/wordpress/wp-content/plugins
 
 # Install themes
 WORKDIR /tmp/themes
-RUN wget https://s3-ap-northeast-1.amazonaws.com/tsukaby/stinger5ver20150505b.zip
+RUN wget https://s3-ap-northeast-1.amazonaws.com/tsukaby.techblog/stinger5ver20150505b.zip
 RUN unzip './*.zip' -d /usr/src/wordpress/wp-content/themes
-
 
 # Download image files
 WORKDIR /usr/src/wordpress/wp-content/
-RUN mkdir uploads
-RUN aws s3 sync s3://tsukaby.techblog/uploads ./uploads/
+RUN wget https://s3-ap-northeast-1.amazonaws.com/tsukaby.techblog/uploads.zip
+RUN unzip uploads.zip && rm uploads.zip
 
 # Download lang files
 WORKDIR /usr/src/wordpress/wp-content/
-RUN mkdir languages
-RUN aws s3 sync s3://tsukaby.techblog/languages ./languages/
+RUN wget https://s3-ap-northeast-1.amazonaws.com/tsukaby.techblog/languages.zip
+RUN unzip languages.zip && rm languages.zip
 
-# Set default lang ja_JP
-# RUN echo "define('WPLANG', 'ja_JP');" >> /usr/src/wordpress/wp-config.php
 
 # Change owner
 RUN chown -R www-data:www-data /usr/src/wordpress/wp-content
