@@ -9,6 +9,12 @@
       "memory": 512
     },
     {
+      "name": "blog",
+      "image": "quay.io/tsukaby/blog",
+      "essential": true,
+      "memory":256
+    },
+    {
       "name": "nginx-proxy",
       "image": "quay.io/tsukaby/tsukaby-proxy",
       "essential": true,
@@ -20,7 +26,8 @@
         }
       ],
       "links": [
-        "tech-blog"
+        "tech-blog",
+        "blog"
       ],
       "mountPoints": []
     }
