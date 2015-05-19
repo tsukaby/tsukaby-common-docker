@@ -18,7 +18,7 @@
       "name": "nginx-proxy",
       "image": "quay.io/tsukaby/tsukaby-proxy",
       "essential": true,
-      "memory": 256,
+      "memory": 128,
       "portMappings": [
         {
           "hostPort": 80,
