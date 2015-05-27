@@ -7,7 +7,7 @@ ENV WORDPRESS_DB_NAME tech_blog
 
 # Install tools
 RUN apt-get update
-RUN apt-get -y --force-yes -o Dpkg::Options::="--force-confdef" install wget curl unzip python python-pip libapache2-mod-php5 php5-mysql
+RUN apt-get -y --force-yes -o Dpkg::Options::="--force-confdef" install wget curl unzip python python-pip libapache2-mod-php5 php5-mysql php5-curl
 RUN pip install awscli
 
 # Install plugins
