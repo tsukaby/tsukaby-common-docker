@@ -7,7 +7,7 @@ ENV WORDPRESS_DB_NAME tech_blog
 
 # Install tools
 RUN apt-get update
-RUN apt-get -y --force-yes -o Dpkg::Options::="--force-confdef" install wget curl unzip python python-pip libapache2-mod-php5
+RUN apt-get -y --force-yes -o Dpkg::Options::="--force-confdef" install wget curl unzip python python-pip libapache2-mod-php5 php5-mysql
 RUN pip install awscli
 
 # Install plugins
@@ -22,6 +22,7 @@ RUN wget https://downloads.wordpress.org/plugin/php-text-widget.zip
 RUN wget https://downloads.wordpress.org/plugin/tinymce-advanced.4.1.9.zip
 RUN wget https://downloads.wordpress.org/plugin/wp-multibyte-patch.2.3.1.zip
 RUN wget https://downloads.wordpress.org/plugin/nephila-clavata.0.2.2.zip
+RUN wget https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.0.8.2.zip
 RUN wget http://blog.openmedialabo.net/wp_plugin/wp-tmkm-amazon1.5.2.zip
 
 RUN unzip './*.zip' -d /usr/src/wordpress/wp-content/plugins
