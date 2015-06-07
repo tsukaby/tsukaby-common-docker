@@ -33,11 +33,6 @@ WORKDIR /tmp/themes
 RUN wget https://s3-ap-northeast-1.amazonaws.com/tsukaby.techblog/stinger5ver20150505b.zip
 RUN unzip './*.zip' -d /usr/src/wordpress/wp-content/themes
 
-# Download image files
-WORKDIR /usr/src/wordpress/wp-content/
-RUN wget https://s3-ap-northeast-1.amazonaws.com/tsukaby.techblog/uploads.zip
-RUN unzip uploads.zip && rm uploads.zip
-
 # Download lang files
 WORKDIR /usr/src/wordpress/wp-content/
 RUN wget https://s3-ap-northeast-1.amazonaws.com/tsukaby.techblog/languages.zip

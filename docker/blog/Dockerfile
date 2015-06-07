@@ -28,11 +28,6 @@ RUN wget http://blog.openmedialabo.net/wp_plugin/wp-tmkm-amazon1.5.2.zip
 
 RUN unzip './*.zip' -d /usr/src/wordpress/wp-content/plugins
 
-# Download image files
-WORKDIR /usr/src/wordpress/wp-content/
-RUN wget https://s3-ap-northeast-1.amazonaws.com/tsukaby.blog/uploads.zip
-RUN unzip uploads.zip && rm uploads.zip
-
 # Download lang files
 WORKDIR /usr/src/wordpress/wp-content/
 RUN wget https://s3-ap-northeast-1.amazonaws.com/tsukaby.blog/languages.zip
