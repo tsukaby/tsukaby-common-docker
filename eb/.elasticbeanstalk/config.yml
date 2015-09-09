@@ -1,6 +1,6 @@
 branch-defaults:
   master:
-    environment: prod-tsukaby-common
+    environment: PRD-tsukaby-common
 global:
   application_name: tsukaby-common
   default_ec2_keyname: aws
