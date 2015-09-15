@@ -19,10 +19,10 @@ RUN wget https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5
 RUN wget https://downloads.wordpress.org/plugin/google-sitemap-generator.4.0.8.zip
 RUN wget https://downloads.wordpress.org/plugin/php-text-widget.zip
 RUN wget https://downloads.wordpress.org/plugin/tinymce-advanced.4.2.3.1.zip
-RUN wget https://downloads.wordpress.org/plugin/wp-multibyte-patch.2.3.1.zip
+RUN wget https://downloads.wordpress.org/plugin/wp-multibyte-patch.2.4.zip
 RUN wget https://downloads.wordpress.org/plugin/amazon-web-services.zip
 RUN wget https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.0.9.5.zip
-RUN wget https://downloads.wordpress.org/plugin/jetpack.3.5.3.zip
+RUN wget https://downloads.wordpress.org/plugin/jetpack.3.7.zip
 RUN wget http://blog.openmedialabo.net/wp_plugin/wp-tmkm-amazon1.5.2.zip
 
 RUN unzip './*.zip' -d /usr/src/wordpress/wp-content/plugins
