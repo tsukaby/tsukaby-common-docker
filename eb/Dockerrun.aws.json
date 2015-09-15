@@ -12,13 +12,13 @@
       "name": "blog",
       "image": "quay.io/tsukaby/blog",
       "essential": true,
-      "memory":256
+      "memory":512
     },
     {
       "name": "nginx-proxy",
       "image": "quay.io/tsukaby/tsukaby-proxy",
       "essential": true,
-      "memory": 128,
+      "memory": 350,
       "portMappings": [
         {
           "hostPort": 80,
