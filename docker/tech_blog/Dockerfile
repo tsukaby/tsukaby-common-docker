@@ -14,7 +14,6 @@ RUN pip install awscli
 WORKDIR /tmp/wp-plugins
 RUN wget https://downloads.wordpress.org/plugin/svg-support.2.2.2.zip
 RUN wget https://downloads.wordpress.org/plugin/crayon-syntax-highlighter.zip
-RUN wget https://downloads.wordpress.org/plugin/crazy-bone.0.5.5.zip
 RUN wget https://downloads.wordpress.org/plugin/easy-fancybox.1.5.7.zip
 RUN wget https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.4.6.zip
 RUN wget https://downloads.wordpress.org/plugin/google-sitemap-generator.4.0.8.zip
