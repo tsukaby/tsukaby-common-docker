@@ -1,6 +1,6 @@
 {
   "ApplicationName": "tsukaby-common",
-  "EnvironmentName": "PRD-tsukaby-common-green",
+  "EnvironmentName": "Please_use_--environment-name",
   "Description": "Common environment.",
   "CNAMEPrefix": "prd-tsukaby-common-standby",
   "Tier": {
@@ -14,8 +14,8 @@
       "Value": "production"
     }
   ],
-  "VersionLabel": "VERSION_LABEL_PLACEHOLDER",
-  "SolutionStackName": "64bit Amazon Linux 2015.03 v1.4.1 running Multi-container Docker 1.6.0 (Generic)",
+  "VersionLabel": "Please_use_--version-label",
+  "SolutionStackName": "64bit Amazon Linux 2016.03 v2.1.1 running Multi-container Docker 1.9.1 (Generic)",
   "OptionSettings": [
     {
       "Namespace": "aws:autoscaling:launchconfiguration",
