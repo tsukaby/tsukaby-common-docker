@@ -1,4 +1,4 @@
-FROM wordpress
+FROM wordpress:4.7.1
 
 ENV WORDPRESS_DB_HOST mydbinstance.cfrtxetqlrkd.ap-northeast-1.rds.amazonaws.com:3306
 ENV WORDPRESS_DB_USER root
@@ -12,17 +12,17 @@ RUN pip install awscli
 
 # Install plugins
 WORKDIR /tmp/wp-plugins
-RUN wget https://downloads.wordpress.org/plugin/svg-support.2.2.2.zip
+RUN wget https://downloads.wordpress.org/plugin/svg-support.2.3.5.zip
 RUN wget https://downloads.wordpress.org/plugin/crayon-syntax-highlighter.zip
-RUN wget https://downloads.wordpress.org/plugin/easy-fancybox.1.5.7.zip
-RUN wget https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.4.6.zip
+RUN wget https://downloads.wordpress.org/plugin/easy-fancybox.1.5.8.2.zip
+RUN wget https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.5.4.zip
 RUN wget https://downloads.wordpress.org/plugin/google-sitemap-generator.4.0.8.zip
 RUN wget https://downloads.wordpress.org/plugin/php-text-widget.zip
-RUN wget https://downloads.wordpress.org/plugin/tinymce-advanced.4.2.3.1.zip
-RUN wget https://downloads.wordpress.org/plugin/wp-multibyte-patch.2.4.zip
-RUN wget https://downloads.wordpress.org/plugin/amazon-web-services.zip
-RUN wget https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.0.9.5.zip
-RUN wget https://downloads.wordpress.org/plugin/jetpack.3.7.zip
+RUN wget https://downloads.wordpress.org/plugin/tinymce-advanced.4.4.3.zip
+RUN wget https://downloads.wordpress.org/plugin/wp-multibyte-patch.2.8.1.zip
+RUN wget https://downloads.wordpress.org/plugin/amazon-web-services.1.0.1.zip
+RUN wget https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.1.1.5.zip
+RUN wget https://downloads.wordpress.org/plugin/jetpack.4.5.zip
 RUN wget http://blog.openmedialabo.net/wp_plugin/wp-tmkm-amazon1.5.2.zip
 
 RUN unzip './*.zip' -d /usr/src/wordpress/wp-content/plugins
